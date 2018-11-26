@@ -18,4 +18,11 @@ if [ "$repo_name" != "jekyll-tailwind-starter" ]; then
   git init
 
   echo "jekyll-tailwind-starter" > .git/description
+  cat << EOF > .gitignore
+_site
+.sass-cache
+.DS_STORE
+.jekyll-metadata
+node_modules
+EOF
 fi
