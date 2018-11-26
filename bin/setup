@@ -11,9 +11,11 @@ fi
 
 repo_name=$(cat .git/description)
 
-if [ "$repo_name" == "jekyll-tailwind-starter" ]; then
+if [ "$repo_name" != "jekyll-tailwind-starter" ]; then
   echo "==> Reinitializing Git repository"
   rm -rf .git
 
   git init
+
+  cat "jekyll-tailwind-starter" > .git/description
 fi
