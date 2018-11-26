@@ -1,0 +1,7 @@
+_site
+.sass-cache
+.jekyll-metadata
+node_modules
+yarn.lock
+Gemfile.lock
+_includes/tailwind.js

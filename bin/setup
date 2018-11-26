@@ -1,0 +1,19 @@
+#! /usr/bin/env bash
+
+set -e
+
+bin/bootstrap
+
+if [ ! -f _includes/tailwind.js ]; then
+  echo "==> Running \`yarn run tailwind init --no-comments _includes/tailwind.js\`"
+  yarn run tailwind init --no-comments _includes/tailwind.js
+fi
+
+repo_name=$(cat .git/description)
+
+if [ "$repo_name" == "jekyll-tailwind-starter" ]; then
+  echo "==> Reinitializing Git repository"
+  rm -rf .git
+
+  git init
+fi

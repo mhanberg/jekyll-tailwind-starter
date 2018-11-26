@@ -1,0 +1,34 @@
+#!/usr/bin/env ruby
+
+raise 'Missing argument: Filename' if ARGV.empty?
+
+require 'Date'
+
+post_title = ARGV.join(' ')
+post_date = Date.today.to_s
+post_time = '09:00:00 -04:00'
+file_path = "./_posts/#{post_date}-#{ARGV.join('-').gsub(/:/, "").downcase}.md"
+
+raise 'File already exists' if File.exists? file_path
+
+front_matter = <<~FRONTMATTER
+---
+layout: post
+title: #{post_title.gsub(/:/, "&#58;")}
+date: #{post_date} #{post_time}
+categories: post
+permalink: /:categories/:year/:month/:day/:title/
+---
+FRONTMATTER
+
+File.open file_path, "w+" do |file|
+  file.puts front_matter
+end
+
+puts "Succesfully created #{file_path}!"
+
+def editor?
+  !(ENV["EDITOR"].nil? || ENV["EDITOR"].empty?)
+end
+
+system("$EDITOR #{file_path}") if editor?
