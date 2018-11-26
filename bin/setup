@@ -17,5 +17,5 @@ if [ "$repo_name" != "jekyll-tailwind-starter" ]; then
 
   git init
 
-  cat "jekyll-tailwind-starter" > .git/description
+  echo "jekyll-tailwind-starter" > .git/description
 fi
