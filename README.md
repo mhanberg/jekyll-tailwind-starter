@@ -70,4 +70,4 @@ bin/new POST_TITLE
 
 ## Deployment
 
-This setup has been tested on [Netlify](https://www.netlify.com).
+This setup has been tested on [Netlify](https://www.netlify.com). You must add the JEKYLL_ENV in the Netlify dashboard to get the PostCSS plugin to execute.
