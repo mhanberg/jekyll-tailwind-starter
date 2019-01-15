@@ -60,6 +60,7 @@ bin/new POST_TITLE
 +---_config.yml // Jekyll configuration
 +---postcss.config.js // PostCSS configuration. All plugins should be registered here.
 +---purgecss.config.js // Purgecss configuration 
++---netlify.toml // Netlify configuration 
 ```
 
 ## PostCSS plugins
@@ -70,4 +71,4 @@ bin/new POST_TITLE
 
 ## Deployment
 
-This setup has been tested on [Netlify](https://www.netlify.com). You must add the JEKYLL_ENV in the Netlify dashboard to get the PostCSS plugin to execute.
+This setup has been tested on [Netlify](https://www.netlify.com).  The JEKYLL_ENV environment variable must be set to production in order for PurgeCSS to execute. The included netlify.toml file will configure this on Netlify deploys
