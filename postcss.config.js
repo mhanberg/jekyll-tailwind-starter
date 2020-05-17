@@ -8,7 +8,8 @@ module.exports = {
     ...(jekyllEnv != "development"
       ? [
           require("@fullhuman/postcss-purgecss")({
-            content: ["!(_site)/**/*.(html|js)", "*.html"],
+            content: ["!(_site|node_modules)/**/*.+(html|js|md)", "*.html"],
+            whitelistPatternsChildren: [/highlight/],
             defaultExtractor: (content) =>
               content.match(/[\w-/:]+(?<!:)/g) || [],
           }),
