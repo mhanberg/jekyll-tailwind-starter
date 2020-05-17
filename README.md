@@ -6,8 +6,6 @@ Welcome! Here you'll find a reasonable starter pack for using [Jekyll](https://j
 
 This project uses [jekyll-postcss](https://github.com/mhanberg/jekyll-postcss) to manage compiling your Tailwind and Autoprefixer styles. You can use any [PostCSS](https://postcss.org) plugin by installing it with `yarn` or `npm` and adding it to your `postcss.config.js`.
 
-[jekyll-purgecss](https://github.com/mhanberg/jekyll-purgecss) is used to integrate Purgecss (only in production).
-
 ## Install
 
 ```bash
@@ -57,16 +55,17 @@ bin/new POST_TITLE
 +---404.html 
 +---_config.yml // Jekyll configuration
 +---postcss.config.js // PostCSS configuration. All plugins should be registered here.
-+---purgecss.config.js // Purgecss configuration 
 +---netlify.toml // Netlify configuration 
 ```
 
 ## PostCSS plugins
 
+- postcss-import
 - Tailwind CSS
 - Autoprefixer
-- postcss-import
+- @fullhuman/postcss-purgecss
+- cssnano
 
 ## Deployment
 
-This setup has been tested on [Netlify](https://www.netlify.com).  The JEKYLL_ENV environment variable must be set to production in order for PurgeCSS to execute. The included netlify.toml file will configure this on Netlify deploys
+This setup has been tested on [Netlify](https://www.netlify.com). 
