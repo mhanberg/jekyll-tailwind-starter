@@ -3,3 +3,6 @@
 
 [context.branch-deploy.environment]
   JEKYLL_ENV = "staging"
+
+[context.deploy-preview.environment]
+  JEKYLL_ENV = "staging"
