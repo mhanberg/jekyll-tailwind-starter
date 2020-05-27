@@ -4,8 +4,8 @@ set -e
 
 bin/bootstrap
 
-if [ ! -f _includes/tailwind.js ]; then
-  echo "==> Running \`yarn run tailwind init_includes/tailwind.js --no-comments \`"
+if [ ! -f _includes/tailwind.config.js ]; then
+  echo "==> Running \`yarn run tailwind init _includes/tailwind.config.js --no-comments \`"
   yarn run tailwind init _includes/tailwind.config.js --no-comments
 fi
 
