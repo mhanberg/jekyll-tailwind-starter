@@ -22,9 +22,6 @@ bin/setup
 ## Usage
 
 ```bash
-# Install new dependencies
-bin/bootstrap
-
 # Start the server 
 bin/start
 
