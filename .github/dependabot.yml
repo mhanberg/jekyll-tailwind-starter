@@ -1,0 +1,20 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "10:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: cssnano
+    versions:
+    - 5.0.0
+    - 5.0.1
+  - dependency-name: autoprefixer
+    versions:
+    - 10.2.3
+    - 10.2.4
+  - dependency-name: postcss-import
+    versions:
+    - 14.0.0
